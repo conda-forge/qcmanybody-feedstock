@@ -1,6 +1,6 @@
 {% set name = "qcmanybody" %}
-{% set version = "0.2.0" %}
-{% set sha256 = "d8a4bff40344b474998e4a952cbd403615dba7a8ace0c7257fea60aa9c037f62" %}
+{% set version = "0.2.1" %}
+{% set sha256 = "5bf2c23c8dd35714a0ca6c5c53e522ef5042d8d6faa75057fce2a0e79e4d8cd3" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
