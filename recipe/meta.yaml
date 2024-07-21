@@ -1,6 +1,6 @@
 {% set name = "qcmanybody" %}
-{% set version = "0.2.1" %}
-{% set sha256 = "5bf2c23c8dd35714a0ca6c5c53e522ef5042d8d6faa75057fce2a0e79e4d8cd3" %}
+{% set version = "0.3.0" %}
+{% set sha256 = "c80ec15ee871cda9c4c74d74cb5ad2377c106f27f6673e2e0368637e5fddeb26" %}
 
 package:
   name: {{ name|lower }}
@@ -23,7 +23,6 @@ requirements:
     - setuptools-scm >=8.0
   run:
     - qcelemental
-    - qcengine
     - numpy
     - pydantic >=1.8.2
     - python >=3.8.0
