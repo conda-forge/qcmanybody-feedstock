@@ -1,6 +1,6 @@
 {% set name = "qcmanybody" %}
-{% set version = "0.3.0" %}
-{% set sha256 = "c80ec15ee871cda9c4c74d74cb5ad2377c106f27f6673e2e0368637e5fddeb26" %}
+{% set version = "0.4.0" %}
+{% set sha256 = "6a23883074bb0d328e8099f6f47d04c3b3e74ba2dde483a8b8c86c9211cc942d" %}
 
 package:
   name: {{ name|lower }}
