@@ -37,7 +37,7 @@ test:
     - python {{ python_min }}
   commands:
     - test -f $SP_DIR/qcmanybody/__init__.py
-    - pip check
+    - # pip check  # until QCEl gets rid of poetry
     - python -c "import qcmanybody as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
     - pytest --pyargs qcmanybody
 
