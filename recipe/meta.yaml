@@ -1,13 +1,13 @@
 {% set name = "qcmanybody" %}
-{% set version = "0.4.0" %}
-{% set sha256 = "6a23883074bb0d328e8099f6f47d04c3b3e74ba2dde483a8b8c86c9211cc942d" %}
+{% set version = "0.5.0" %}
+{% set sha256 = "a968f7f22e7baba3404867628121811e6ac1501081452b83d4d668412c611fb7" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -17,15 +17,15 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - setuptools >=61.0
     - setuptools-scm >=8.0
   run:
     - qcelemental
     - numpy
-    - pydantic >=1.8.2
-    - python >=3.8.0
+    - pydantic >=1.10.17,<3
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -34,6 +34,7 @@ test:
     - pytest >=7.0.0
     - zstandard
     - pip
+    - python {{ python_min }}
   commands:
     - test -f $SP_DIR/qcmanybody/__init__.py
     - pip check
