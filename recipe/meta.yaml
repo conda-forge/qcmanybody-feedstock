@@ -1,6 +1,6 @@
 {% set name = "qcmanybody" %}
-{% set version = "0.5.1" %}
-{% set sha256 = "597b548f5267cdb584b7ce02a01b5ba26d40c1d8e3f6c62b2b01e4948d253ca0" %}
+{% set version = "0.6.0" %}
+{% set sha256 = "cd53df4195dd8386b7f2a4c4935f86cdcbe4e875580c29949d42e0c5a76a47b8" %}
 
 package:
   name: {{ name|lower }}
@@ -22,9 +22,9 @@ requirements:
     - setuptools >=61.0
     - setuptools-scm >=8.0
   run:
-    - qcelemental
+    - qcelemental >=0.50.0rc2,<0.70.0
     - numpy
-    - pydantic >=1.10.17,<3
+    - pydantic >=2.12.0,<3
     - python >={{ python_min }}
 
 test:
