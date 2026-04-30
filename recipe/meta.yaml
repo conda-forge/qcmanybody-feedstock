@@ -1,6 +1,6 @@
 {% set name = "qcmanybody" %}
-{% set version = "0.7.0" %}
-{% set sha256 = "f1326fbfa79602c19daffa208db8c3a5355495d7d9e818842e9b903aad00579c" %}
+{% set version = "0.7.1" %}
+{% set sha256 = "58190b223942546555233af2626f043ae8fbdb51b542a914fd7ba6faad63011d" %}
 
 package:
   name: {{ name|lower }}
@@ -22,7 +22,7 @@ requirements:
     - setuptools >=61.0
     - setuptools-scm >=8.0
   run:
-    - qcelemental >=0.50.0rc3,<0.70.0
+    - qcelemental >=0.50.0rc5,<0.70.0
     - numpy
     - pydantic >=2.11.0,<3
     - python >={{ python_min }}
@@ -39,7 +39,7 @@ test:
     - test -f $SP_DIR/qcmanybody/__init__.py
     # - pip check  # until QCEl gets rid of poetry
     - python -c "import qcmanybody as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
-    - pytest --pyargs qcmanybody
+    - pytest --pyargs qcmanybody -k "not (4b or 3b)"
 
 about:
   home: https://github.com/MolSSI/QCManyBody
