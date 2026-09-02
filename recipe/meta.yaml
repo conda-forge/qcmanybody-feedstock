@@ -1,6 +1,6 @@
 {% set name = "qcmanybody" %}
-{% set version = "0.7.2" %}
-{% set sha256 = "e1b0bfff8f295ae5ce23d46762b097d58768317a5810d70e6549f34ccb9ec3e9" %}
+{% set version = "0.8.0" %}
+{% set sha256 = "c89414838e920d0560ab0fd76e36b70386ff292bcc041f7799771774141b044f" %}
 
 package:
   name: {{ name|lower }}
@@ -37,7 +37,7 @@ test:
     - python {{ python_min }}
   commands:
     - test -f $SP_DIR/qcmanybody/__init__.py
-    # - pip check  # until QCEl gets rid of poetry
+    - pip check
     - python -c "import qcmanybody as qc;assert qc.__version__ == '{{ version }}', f'{qc.__version__=} differs from recipe=\'{{ version }}\''"
     - pytest --pyargs qcmanybody -k "not (4b or 3b)"
 
